@@ -1,7 +1,7 @@
 
 ## irregular x regular
 
-## e.g. cells x genomic profiles
+### e.g. cells x genomic profiles
 
 Suppose:
 - genomic profiles have a starting resolution of 200 bp
