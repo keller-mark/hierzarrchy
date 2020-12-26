@@ -1,5 +1,5 @@
 # hierzarrchy
-Python helpers for storing multi-scale irregular*regular and irregular*irregular hierarchies with Zarr.
+Python helpers for storing multi-scale irregular-by-regular and irregular-by-irregular hierarchies with Zarr.
 JavaScript helpers for reading the stores with Zarr.js.
 
 🚧 work in progress 🚧
