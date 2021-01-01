@@ -22,6 +22,7 @@ Resources
 - [Zarr multiscale convention](https://github.com/zarr-developers/zarr-specs/issues/50)
 - [HiGlass Zarr datafetchers](https://github.com/higlass/higlass-zarr-datafetchers)
 - [Bar-Joseph et al. 2001](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.6798&rep=rep1&type=pdf)
+- [Elmqvist et al. 2008](https://ieeexplore.ieee.org/abstract/document/4475479/)
 
 ![irregular by regular](./img/irregular-regular.png)
 
