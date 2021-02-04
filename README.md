@@ -35,6 +35,8 @@ Once the CLI has been created:
   - Use case: single-cell ATAC-seq profiles for thousands or millions of cells, along the whole genome
 - Add support for visualization of the multi-scale irregular-by-irregular hierarchies to the Vitessce heatmap.
   - Use case: single-cell RNA-seq profiles for thousands or millions of cells, and thousands of genes
+  
+Once a Zarr multi-scale convention has been defined, it would also be useful to create an API which can return multi-scale responses from a single-scale store on-the-fly.
 
 
 ### Resources
