@@ -28,7 +28,13 @@
     - The JSON dendrogram for genes should be optional, allowing the user to instead specify a SciPy hierarchical clustering algorithm
     - The JSON dendrogram for cells should be optional, allowing the user to instead provide flat cell type annotations plus a cell type ontology
   - Output: the multi-scale Zarr store
-- JavaScript helpers for reading the stores with Zarr.js.
+
+### Eventually
+Once the CLI has been created:
+- Add support for visualization of the multi-scale irregular-by-regular hierarchies to HiGlass or Cistrome Explorer.
+  - Use case: single-cell ATAC-seq profiles for thousands or millions of cells, along the whole genome
+- Add support for visualization of the multi-scale irregular-by-irregular hierarchies to the Vitessce heatmap.
+  - Use case: single-cell RNA-seq profiles for thousands or millions of cells, and thousands of genes
 
 
 ### Resources
