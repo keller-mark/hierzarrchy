@@ -1,15 +1,14 @@
 # hierzarrchy
-Python helpers for storing multi-scale irregular-by-regular and irregular-by-irregular hierarchies with Zarr.
-JavaScript helpers for reading the stores with Zarr.js.
 
-🚧 work in progress 🚧
+🚧 work in progress / proposal 🚧
 
-Problem:
+### The problem
 - Hierarchical clusterings of cells and genes introduce two irregularly shaped trees (one on each axis) in which two nodes at the same level in the tree may have different numbers of leaves.
 - Hierarchical clusterings of cells which correspond to genome-wide profiles intoduces one irregularly shaped tree (for the cells axis) and one regularly shaped tree (for the genome axis (HiGlass)).
 - Storage of multi-scale data with Zarr has primarily focused on pre-computing image pyramids, which have a regular shape.
 
-Notes:
+
+#### Notes
 - Hierarchical clustering introduces a partial ordering of nodes. However, initially this repository will focus on cases in which there is an optimal ordering that has been chosen.
   - For example, the gene axis of a gene-by-cell matrix may be optimally ordered for visualization using the method proposed by Bar-Joseph et al. 2001.
 - When determining the best storage layout to minimize the number of chunks requested, focus on visualization:
@@ -18,7 +17,21 @@ Notes:
 
 - This feels like a problem that must have already been solved before and I just don't know its computer science terminology. Perhaps it is a [space-filling tree](https://en.wikipedia.org/wiki/List_of_data_structures#Space-partitioning_trees)? 
 
-Resources
+### Goal
+
+- Python CLI for creating a Zarr store which contains multi-scale irregular-by-regular hierarchies
+  - Input: BigWig files for individual genomic tracks + JSON dendrogram file whose leaves correspond to each BigWig file
+    - The genomic hierarchy is implicit, starting at a specified `starting_resolution` supplied as a parameter
+  - Output: the multi-scale Zarr store
+- Python CLI for creating a Zarr store which contains multi-scale irregular-by-irregular hierarchies
+  - Input: Cell-by-gene matrix + JSON dendrogram for genes + JSON dendrogram for cells
+    - The JSON dendrogram for genes should be optional, allowing the user to instead specify a SciPy hierarchical clustering algorithm
+    - The JSON dendrogram for cells should be optional, allowing the user to instead provide flat cell type annotations plus a cell type ontology
+  - Output: the multi-scale Zarr store
+- JavaScript helpers for reading the stores with Zarr.js.
+
+
+### Resources
 - [Zarr multiscale convention](https://github.com/zarr-developers/zarr-specs/issues/50)
 - [HiGlass Zarr datafetchers](https://github.com/higlass/higlass-zarr-datafetchers)
 - [Bar-Joseph et al. 2001](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.6798&rep=rep1&type=pdf)
