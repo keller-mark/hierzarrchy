@@ -20,11 +20,16 @@
 ### Goal
 
 - Python CLI for creating a Zarr store which contains multi-scale irregular-by-regular hierarchies
-  - Input: BigWig files for individual genomic tracks + JSON dendrogram file whose leaves correspond to each BigWig file
-    - The genomic hierarchy is implicit, starting at a specified `starting_resolution` supplied as a parameter
+  - Input:
+    - Files: BigWig files for individual genomic tracks + JSON dendrogram file whose leaves correspond to each BigWig file
+    - Parameter: `starting_resolution` The genomic axis starting resolution. By default, `200` bases.
+    - Parameter: `num_cuts` The number of cuts of the dendrogram on the irregular axis, regularly spaced along the height.
   - Output: the multi-scale Zarr store
 - Python CLI for creating a Zarr store which contains multi-scale irregular-by-irregular hierarchies
-  - Input: Cell-by-gene matrix + JSON dendrogram for genes + JSON dendrogram for cells
+  - Input
+    - Files: Cell-by-gene matrix + JSON dendrogram for genes + JSON dendrogram for cells
+    - Parameter: `num_cuts_obs` The number of cuts of the dendrogram on the cell irregular axis, regularly spaced along the height.
+    - Parameter: `num_cuts_var` The number of cuts of the dendrogram on the gene irregular axis, regularly spaced along the height.
     - The JSON dendrogram for genes should be optional, allowing the user to instead specify a SciPy hierarchical clustering algorithm
     - The JSON dendrogram for cells should be optional, allowing the user to instead provide flat cell type annotations plus a cell type ontology
   - Output: the multi-scale Zarr store
