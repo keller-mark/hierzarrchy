@@ -9,13 +9,13 @@
 
 
 #### Notes
-- Hierarchical clustering introduces a partial ordering of nodes. However, initially this repository will focus on cases in which there is an optimal ordering that has been chosen.
+- Hierarchical clustering introduces a partial ordering of nodes. For simplicity, this proposal assumes a fixed optimal ordering of nodes.
   - For example, the gene axis of a gene-by-cell matrix may be optimally ordered for visualization using the method proposed by Bar-Joseph et al. 2001.
-- When determining the best storage layout to minimize the number of chunks requested, focus on visualization:
+- When determining the best storage layout to minimize the number of chunks requested, focus on visualization use cases:
   - Typically looking at a single resolution at a time (along each axis), so fine to store different resolutions in different groups
   - Typically panning along a single resolution at a time, so chunks should store values contiguously within each resolution
 
-- This feels like a problem that must have already been solved before and I just don't know its computer science terminology. Perhaps it is a [space-filling tree](https://en.wikipedia.org/wiki/List_of_data_structures#Space-partitioning_trees)? 
+- Perhaps this problem has already been solved and I just do not know where to find the solution. Perhaps it is related to [space-filling trees](https://en.wikipedia.org/wiki/List_of_data_structures#Space-partitioning_trees)? 
 
 ### Goal
 
